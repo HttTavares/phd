@@ -4,6 +4,11 @@ https://github.com/EDSEL-skoltech/awesome_crop_models
 https://onlinelibrary.wiley.com/doi/epdf/10.1111/raq.12464
 http://www.scielo.org.co/pdf/agc/v38n3/0120-9965-agc-38-03-382.pdf - A comparison of two open-source crop simulation models for a potato crop
 https://github.com/EDSEL-skoltech/awesome_crop_models
+    JOURNALS
+        https://www.sciencedirect.com/journal/agricultural-systems
+        https://www.sciencedirect.com/journal/industrial-crops-and-products
+        https://www.springer.com/journal/11119 - Precision Agriculture
+
 
 
 
