@@ -9,6 +9,16 @@ https://github.com/EDSEL-skoltech/awesome_crop_models
         https://www.sciencedirect.com/journal/industrial-crops-and-products
         https://www.springer.com/journal/11119 - Precision Agriculture
 
+    AI
+        https://github.com/sweetice/Deep-reinforcement-learning-with-pytorch
+        https://github.com/jingweiz/pytorch-rl
+        https://github.com/dennybritz/reinforcement-learning
+        https://github.com/ShangtongZhang/reinforcement-learning-an-introduction/tree/master
+        https://github.com/AI4Finance-Foundation/FinRL
+        https://github.com/Nasdin/ReinforcementLearning-AtariGame
+        https://github.com/geochri/AlphaZero_Chess
+        https://github.com/rayanramoul/Arcane-Chess
+        
 
 
 
@@ -66,3 +76,34 @@ https://github.com/EDSEL-skoltech/awesome_crop_models
 ###  ( ) 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+agtechs:
+    – Agrotools;
+    – Grão Direto;
+    – Jetbov;
+    – Pink Farms;
+    – Safe Trace;
+    – Solubio;
+    – TerraMagna;
+    – Tbit Tecnologia;
+    – Hórus Aeronaves;
+    – YouAgro;
+    – Agrosmart.
