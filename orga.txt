@@ -1,5 +1,7 @@
 
 RESOURCES
+    MOST IMPORTANT LINKS
+        https://rgautron.gitlabpages.inria.fr/gym-dssat-docs/Installation/index.html
 https://github.com/EDSEL-skoltech/awesome_crop_models
 https://onlinelibrary.wiley.com/doi/epdf/10.1111/raq.12464
 http://www.scielo.org.co/pdf/agc/v38n3/0120-9965-agc-38-03-382.pdf - A comparison of two open-source crop simulation models for a potato crop
@@ -18,7 +20,19 @@ https://github.com/EDSEL-skoltech/awesome_crop_models
         https://github.com/Nasdin/ReinforcementLearning-AtariGame
         https://github.com/geochri/AlphaZero_Chess
         https://github.com/rayanramoul/Arcane-Chess
-        
+    Soil Data
+        https://www.isric.org
+        https://earth.gsfc.nasa.gov/hydro/data/nasa-usda-global-soil-moisture-data
+        https://earth.gsfc.nasa.gov/hydro/data/nasa-usda-global-soil-moisture-data
+        https://hub.arcgis.com/maps/uneplive::soils-timor-leste/about
+        https://datasetsearch.research.google.com/search?src=0&query=soil%20deficiency&docid=L2cvMTFxOHJ6MzQ5Zw%3D%3D        
+    Crop Simulators
+        https://github.com/calvinmowens/CropNetwork
+        https://github.com/daquinterop/Py_DSSATTools
+        https://github.com/gicait/PyAEZ
+        https://github.com/ISRICWorldSoil/SoilGrids250m
+
+
 
 
 
