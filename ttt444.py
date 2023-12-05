@@ -5,9 +5,9 @@
 import numpy as np
 import pickle
 
-BOARD_X = 4
-BOARD_Y = 4
-BOARD_Z = 4
+BOARD_X = 3
+BOARD_Y = 3
+BOARD_Z = 3
 BOARD_ROWS = 3
 BOARD_COLS = 3
 
@@ -35,6 +35,9 @@ class State:
         return self.hash_val
 
     def read_diagonals(self, results, fixed, board_size):
+        """
+        checks every diagonal of every face
+        """
         trace = 0
         reverse_trace = 0
         runner = [1, 1]
@@ -81,7 +84,7 @@ class State:
         # results.append(reverse_trace)
         # print(results)  
         for result in results:
-            print(result)
+            # print(result)
             if result == BOARD_X:
                 self.winner = 1
                 self.end = True
@@ -104,10 +107,10 @@ class State:
 
     # @symbol: 1 or -1
     # put chessman symbol in position (i, j)
-    def next_state(self, i, j, symbol):
+    def next_state(self, i, j, k, symbol):
         new_state = State()
         new_state.data = np.copy(self.data)
-        new_state.data[i, j] = symbol
+        new_state.data[i, j, k] = symbol
         return new_state
 
     # print the board
@@ -378,7 +381,6 @@ def play():
 
 
 if __name__ == '__main__':
-    all_states = get_all_states()
     # train(int(15000))
     # compete(int(500))
     # play()
