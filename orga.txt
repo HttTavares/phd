@@ -31,8 +31,19 @@ https://github.com/EDSEL-skoltech/awesome_crop_models
         https://github.com/daquinterop/Py_DSSATTools
         https://github.com/gicait/PyAEZ
         https://github.com/ISRICWorldSoil/SoilGrids250m
-
-
+    crop management papers
+        https://www.tandfonline.com/doi/abs/10.1300/J064v30n03_08
+        https://epicapex.tamu.edu/epic/
+        https://books.google.com.br/books?hl=en&lr=&id=uZcznh2lT2UC&oi=fnd&pg=PP13&dq=resource+allocation+problem+nutrients+agriculture&ots=UI9Bp6T6gT&sig=HmE7cMONz_Ft5jkRYu6dh1rJzVg&redir_esc=y#v=onepage&q=resource%20allocation%20problem%20nutrients%20agriculture&f=false
+        https://link.springer.com/book/10.1007/978-1-4020-6860-7
+    RL in practice
+        https://github.com/ai4co/rl4co
+        https://github.com/qiang-ma/HRL-for-combinatorial-optimization
+        https://github.com/instadeepai/EGTA-NMARL
+        https://github.com/sreekanth-sreekumar/os-final-project
+        https://github.com/ahmadnagib/SARL-RRMhttps://github.com/ahmadnagib/SARL-RRM
+        https://github.com/M-Parvini/AoI-V2X-ISWCS-Conference-2021/tree/main
+        
 
 
 
