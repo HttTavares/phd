@@ -1,0 +1,45 @@
+# TODO
+# (X) assign plots to agents
+# (X) make plots/crops evolve with tick
+# ( ) make plot/crop lifecycle
+# ( ) make resources have effects
+# ( ) make agents decide
+# ( ) chance to lose hp
+# ( ) calculate return of crop
+# ( ) keep track of ticks/epoch/time
+# ( ) nutrient necessity and application  
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+
+
+# TODO open problems
+# ( ) How to deal with the fact that there will be many categories of the same object? 
+#       Make one full category and develop way to easily deal with subcategories that satisfy a certain property?
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+
+
+
+
+
+
+
+#

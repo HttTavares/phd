@@ -1,12 +1,25 @@
-from classes.agent import Agent 
-from classes.category import Category 
-from classes.crop import Crop 
-from classes.game import Game 
-from classes.gameresource import Resource 
-from classes.history import History 
-from classes.plot import Plot 
-from classes.state import State 
-from classes.utils import Utils 
+
+try:
+    from classes.agent import Agent 
+    from classes.category import Category 
+    from classes.crop import Crop 
+    from classes.game import Game 
+    from classes.gameresource import Resource 
+    from classes.history import History 
+    from classes.plot import Plot 
+    from classes.state import State 
+    from classes.utils import Utils 
+except:
+    from agent import Agent 
+    from category import Category 
+    from crop import Crop 
+    from game import Game 
+    from gameresource import Resource 
+    from history import History 
+    from plot import Plot 
+    from state import State 
+    from utils import Utils 
+
 
 
 class World(dict):
@@ -27,6 +40,19 @@ class World(dict):
             'Category': Category,
         }
         self.categories = Category( type = 'Category' ) 
+        self.data = {
+
+            'Resource Initialization Data': {
+
+                'Water': {
+                    'name': 'Water',
+                    'cost': 1,
+                }
+
+            }
+
+        }
+
 
     def make_object_metadata( self, object ):
         object.world = self
@@ -37,7 +63,9 @@ class World(dict):
         for object_type in self.objects:
             self.categories[object_type] = Category( object_type = object_type )
         game = self.create_object(type = 'Game', number_of_players = 1, number_of_plots = 5, time_limit = 30)
+        self.game = game
         game.run()
+
 
     def create_object( self, **metadata ):
         object = self.objects[metadata['type']](metadata)

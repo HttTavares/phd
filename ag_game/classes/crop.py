@@ -8,9 +8,14 @@ class Crop(dict):
             self.collect()
         else:
             self.growth += 1
+            for resource_name in self.necessities:
+                self.deficit[resource_name] += self.necessities[resource_name]
 
     def collect( self ):
         self.plot.owner.money += self.price
         self.growth = 0
         self.plot.health = self.plot.health - 1
 
+    def apply_resource( self, resource, quantity ):
+        self.deficit[resource.name] -= quantity
+        self.plot.owner.money -= resource.cost
