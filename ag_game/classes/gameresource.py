@@ -3,3 +3,6 @@ class Resource(dict):
         for key, value in metadata.items():
             setattr(self, key, value)
 
+    # def perform_effect( self ):
+    #     self.eff
+

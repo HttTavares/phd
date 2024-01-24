@@ -1,3 +1,4 @@
+import random 
 
 try:
     from classes.agent import Agent 
@@ -47,16 +48,29 @@ class World(dict):
                 'Water': {
                     'name': 'Water',
                     'cost': 1,
-                }
+                },
+                'Pesticide': {
+                    'name': 'Pesticide',
+                    'cost': 10,
+                },
+                'Herbicide': {
+                    'name': 'Herbicide',
+                    'cost': 10,
+                },
+                'Booster': {
+                    'name': 'Booster',
+                    'cost': 5,
+                },
 
             }
 
         }
-
+        self.random = random
 
     def make_object_metadata( self, object ):
         object.world = self
         object.id = self.utils.generate_random_id()
+        object.state = State()
         # object.type = metadata['type']
 
     def run( self ):

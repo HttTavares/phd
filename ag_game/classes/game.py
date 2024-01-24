@@ -35,6 +35,7 @@ class Game(dict):
             crop.deficit = {
                 'Water': 0
             }
+            crop.quality = 1
 
         for player_number in range(self.number_of_players):
             agent = self.world.create_object( type = 'Agent', number = player_number, money = 1000 )
@@ -42,14 +43,26 @@ class Game(dict):
             for agent in self.agents:
                 agent.receive_plots( self.plots.objects )
 
+    def change_crop_health( self, crop, quantity ):
+        crop.change_health( quantity )
 
+    def effect_pesticide( self, crop ):
+        crop.change_health( 1 )
+
+    def effect_booster( self, crop ):
+        if self.world.random.randint( 1, 100 ) < 30:
+            crop.change_quality( 1 )
 
     def advance_tick(self):
         water = list(self.resources.objects.values())[0] # FIND PLACE FOR THIS
+        pesticide = list(self.resources.objects.values())[1] # FIND PLACE FOR THIS
+        pesticide.effect = self.effect_pesticide
         for agent in self.agents:
             for plot in agent.plots.values():
                 plot.crop.apply_resource( water, 3 )
                 plot.crop.grow_crop()
+                if plot.crop.health < 3:
+                    plot.crop.apply_resource( pesticide, 1 )
                 
 
 
