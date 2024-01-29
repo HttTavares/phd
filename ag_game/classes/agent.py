@@ -18,17 +18,25 @@ class Agent(dict):
         f"""
         gets the resource state of every owned plot and crop
         """
-        ret = { 'crops': {}, 'plots': {} }
+        ret = { 'crops': {}, 'plots': {}, 'agent': {}, 'weather': {}, "market": {} }
         for plot in self.plots:
             ret['plots'][plot.id] = plot.get_state()
             ret['crops'][plot.crop.id] = plot.crop.get_state()
+        ret['agent']['money'] = self.money
+
         return ret
 
     def use_nn( self ):
         f"""
         uses agent's NN in order to decide resource usage
         """
-        return self.nn()
+        return self.nn( self.state() )
+
+    def make_decision( self ):
+        f"""
+        exports the decision given by the nn for the game to apply the resources.
+        """
+        pass
 
 
 

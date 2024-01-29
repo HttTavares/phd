@@ -70,7 +70,7 @@ class World(dict):
     def make_object_metadata( self, object ):
         object.world = self
         object.id = self.utils.generate_random_id()
-        object.state = State()
+        object.state = State( {'object': object} )
         # object.type = metadata['type']
 
     def run( self ):
@@ -85,6 +85,7 @@ class World(dict):
         object = self.objects[metadata['type']](metadata)
         self.make_object_metadata( object )
         self.categories[object.type][object.id] = object
+
         return object
 
     # def read_object( self, object_id ):

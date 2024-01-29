@@ -7,7 +7,7 @@ class Game(dict):
     def run( self ):
         self.initialize()
         for tick in range(self.time_limit):
-            self.advance_tick()
+            self.step()
         print(self.agents.objects)
         print(self.plots.objects)
         print(self.crops.objects)
@@ -53,7 +53,7 @@ class Game(dict):
         if self.world.random.randint( 1, 100 ) < 30:
             crop.change_quality( 1 )
 
-    def advance_tick(self):
+    def step(self):
         water = list(self.resources.objects.values())[0] # FIND PLACE FOR THIS
         pesticide = list(self.resources.objects.values())[1] # FIND PLACE FOR THIS
         pesticide.effect = self.effect_pesticide

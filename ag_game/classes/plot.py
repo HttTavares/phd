@@ -3,8 +3,18 @@ class Plot(dict):
         for key, value in metadata.items():
             setattr(self, key, value)
 
-    def get_state( self ):
+    def update_state( self ):
         f"""
-        gets the resource state of this crop
+        updates the resource and intrinsic state of this crop
         """
-        pass
+        self.state.quality = self.quality
+        self.state.health = self.health
+
+    def get_state( self ):
+        self.update_state()
+        return {
+            'quality': self.state.quality,
+            'health': self.state.health,
+        }
+
+

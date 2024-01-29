@@ -9,9 +9,13 @@
 # (X) keep track of ticks/epoch/time (state?)
 # (X) nutrient necessity and application  
 # (X) health dynamics
+# (X) state dynamics
 # ( ) separate programming state (required for me to develop the code) vs. data state (required to solve phd problems)
-# ( ) 
-# ( ) 
+# ( ) implement resource effect dynamics. 
+#       every resource has an effect dict, e.g., { 'quality': { p(i, a, j) } , 'growth': { p(i, a, j) }, 'health': { p(i, a, j) } }. 
+#       resource.perform_effect iterates through this applying probability of going from attribute at quantity i to j by 
+#       applying a amount of this resource. (p(i, a, j) object?)
+# ( ) create debugging infrastructure
 # ( ) 
 # ( ) 
 # ( ) 
