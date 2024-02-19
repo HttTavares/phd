@@ -16,7 +16,7 @@
 #       resource.perform_effect iterates through this applying probability of going from attribute at quantity i to j by 
 #       applying a amount of this resource. (p(i, a, j) object?)
 # ( ) create debugging infrastructure
-# ( ) 
+# ( ) transform semantic state into array
 # ( ) 
 # ( ) 
 # ( ) 
