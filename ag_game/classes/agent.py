@@ -14,8 +14,11 @@ class NN(nn.Module):
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
-        x = self.fc3(x)
+        x = torch.relu(self.fc3(x))  # Ensures non-negative outputs
         return x
+
+    def custom_loss_function(self):
+        pass
 
     # # Assuming state_data and actions are your features and labels, respectively
     # # Convert data to torch tensors
@@ -31,7 +34,6 @@ class NN(nn.Module):
 
     # # Define loss function and optimizer
     # loss_fn = nn.MSELoss()  # Or nn.CrossEntropyLoss() for classification
-    # optimizer = optim.Adam(model.parameters(), lr=0.001)
 
     # # Training loop
     # for epoch in range(num_epochs):
@@ -58,12 +60,34 @@ class Agent(dict):
     def initialize_nn(self):
         self.update_state()
         state_data = self.get_state_data()
-        actions = []
-        for resource in self.game.resources:
-            for plot in self.plots:
-                actions.append(1)
-        self.nn = NN(state_size=len(state_data), action_size=len(actions))
+        self.action_vector_meaning = []
+        for plot in self.plots:
+            for resource in self.game.resources:
+                self.action_vector_meaning.append((plot, resource))
+        self.nn = NN(
+            state_size=len(state_data), action_size=len(self.action_vector_meaning)
+        )
         self.optimizer = optim.Adam(self.nn.parameters(), lr=0.001)
+
+    def custom_loss_function(self):
+        initial_money = self.money
+        self.game.step()
+        final_money = self.money
+        loss = final_money - initial_money
+        return loss
+
+    def training_loop(self, num_epochs):
+        for turn in range(num_epochs):
+            self.optimizer.zero_grad()  # Zero the gradients to prevent accumulation
+            self.update_state()
+            loss = self.custom_loss_function()  # Compute the loss
+            print(loss)
+            loss.backward(
+                retain_graph=True
+            )  # Compute the gradient of the loss w.r.t. the network parameters
+            self.optimizer.step()  # Update the network parameters based on the gradient
+
+        print(f"Epoch {epoch}, Loss: {loss.item()}")
 
     def receive_plots(self, plots):
         f"""
@@ -93,31 +117,33 @@ class Agent(dict):
         self.state["agent"]["money"] = self.money
         return self.state
 
-    def use_nn(self):
+    def figure_out_decision(self):
         f"""
         uses agent's NN in order to decide resource usage
         """
-        self.state_space = []
-        self.update_state()
-        for thing in self.plots:
-            for thing2 in thing.state:
-                self.state_space.append(thing2)
-                print(thing)
-            for thing3 in thing.crop.state:
-                self.state_space.append(thing3)
-        # return self.nn(self.get_state())
+        state_data = self.get_state_data()
+        features = torch.tensor(state_data, dtype=torch.float32)
+        # actions = torch.round(self.nn(features) * 100)
+        action = self.nn(features)
+        # prezip = []
+        # for plot in self.plots:
+        #     for resource in self.game.resources:
+        #         prezip.append(f"{plot.id}---{resource.id}")
+        return action
 
     def make_decision(self):
+        # MAKE THIS NOW
         f"""
         exports the decision given by the nn for the game to apply the resources.
         """
         pass
 
     def get_state_data(self):
-        ret = [self.money / self.max_money]
+        ret = []
         for plot in self.plots:
             for parameter in plot.get_state().values():
                 ret.append(parameter)
             for parameter in plot.crop.get_state().values():
                 ret.append(parameter)
+        ret.append(self.money / self.max_money)
         return ret

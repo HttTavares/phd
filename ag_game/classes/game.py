@@ -1,3 +1,9 @@
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+
+
 class Game(dict):
     def __init__(self, metadata):
         for key, value in metadata.items():
@@ -5,8 +11,8 @@ class Game(dict):
 
     def run(self):
         self.initialize()
-        for tick in range(self.time_limit):
-            self.step()
+        # for tick in range(self.time_limit):
+        #             self.step()
         print(self.agents.objects)
         print(self.plots.objects)
         print(self.crops.objects)
@@ -59,12 +65,20 @@ class Game(dict):
             crop.change_quality(1)
 
     def step(self):
-        water = list(self.resources.objects.values())[0]  # FIND PLACE FOR THIS
-        pesticide = list(self.resources.objects.values())[1]  # FIND PLACE FOR THIS
-        pesticide.effect = self.effect_pesticide
+        # water = list(self.resources.objects.values())[0]  # FIND PLACE FOR THIS
+        # pesticide = list(self.resources.objects.values())[1]  # FIND PLACE FOR THIS
+        # pesticide.effect = self.effect_pesticide
         for agent in self.agents:
-            for plot in agent.plots:
-                plot.crop.apply_resource(water, 3)
+            action = agent.figure_out_decision()
+            real_action = torch.round(action * 100)
+            print(action)
+            print(real_action)
+            for index in range(len(agent.action_vector_meaning)):
+                combination = agent.action_vector_meaning[index]
+                # for combination in agent.action_vector_meaning:
+                plot = combination[0]
+                resource = combination[1]
+                plot.crop.apply_resource(resource, real_action[index])
                 plot.crop.grow_crop()
-                if plot.crop.health < 3:
-                    plot.crop.apply_resource(pesticide, 1)
+                # if plot.crop.health < 3:
+                #     plot.crop.apply_resource(pesticide, 1)

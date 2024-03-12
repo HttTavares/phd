@@ -17,6 +17,21 @@
 #       applying a amount of this resource. (p(i, a, j) object?)
 # ( ) create debugging infrastructure
 # ( ) transform semantic state into array
+# ( ) fazer um input_meaning_vector (um vetor contendo todas as combinações de objetos do input da NN)
+# (X) fazer um output_meaning_vector (um vetor contendo todas as combinações de objetos do output da NN)
+# (X) fazer o game step usar recursos da decisão do agent
+# ( ) fazer training loop completo
+# ( ) colocar a operação de achar a ação real fora do agent pq se não fica sem derivada.
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
+# ( ) 
 # ( ) 
 # ( ) 
 # ( ) 
