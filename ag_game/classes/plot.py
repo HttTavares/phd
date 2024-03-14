@@ -17,3 +17,6 @@ class Plot(dict):
             "quality": self.state.quality,
             "health": self.state.health,
         }
+
+
+#test
