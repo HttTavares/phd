@@ -3,7 +3,7 @@
 # (X) make plots/crops evolve with tick
 # (X) make plot/crop lifecycle
 # (X) make resources have effects
-# ( ) make agents decide
+# (X) make agents decide
 # (X) chance to lose hp
 # (X) calculate return of crop
 # (X) keep track of ticks/epoch/time (state?)

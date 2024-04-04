@@ -64,6 +64,9 @@ class Game(dict):
         if self.world.random.randint(1, 100) < 30:
             crop.change_quality(1)
 
+    def effect_resources( self, ):
+        pass
+
     def step(self):
         # water = list(self.resources.objects.values())[0]  # FIND PLACE FOR THIS
         # pesticide = list(self.resources.objects.values())[1]  # FIND PLACE FOR THIS
@@ -82,3 +85,5 @@ class Game(dict):
                 plot.crop.grow_crop()
                 # if plot.crop.health < 3:
                 #     plot.crop.apply_resource(pesticide, 1)
+
+
