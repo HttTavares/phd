@@ -12,4 +12,9 @@ class Utils(dict):
             ret += random.choice(self.symbols)  
         return ret
     
+    def generate_distribution_function( self, stat_type, parameters ):
+        # finish
+        def f( parameters ):
+            pass
+        return f
 

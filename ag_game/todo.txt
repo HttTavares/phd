@@ -22,7 +22,7 @@
 # (X) fazer o game step usar recursos da decisão do agent
 # ( ) fazer training loop completo
 # ( ) colocar a operação de achar a ação real fora do agent pq se não fica sem derivada.
-# ( ) 
+# ( ) Where to create logs? game?
 # ( ) 
 # ( ) 
 # ( ) 

@@ -86,4 +86,9 @@ class Game(dict):
                 # if plot.crop.health < 3:
                 #     plot.crop.apply_resource(pesticide, 1)
 
+    def logger( self ):
+        # finish
+        pass
+
+
 
